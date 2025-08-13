@@ -41,7 +41,7 @@ for file in *.tar.gz; do
     
     # Extract the tar.gz file into the created directory
     echo "Extracting $file into $base_name/"
-    if tar -xzf "$file" -C "$base_name"; then
+    if tar --skip-old-files -xzf "$file" -C "$base_name"; then
         echo "Successfully extracted $file"
         ((processed++))
     else

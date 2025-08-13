@@ -10,9 +10,10 @@ The PMCOA data is stored as txt and xml files. In the original paper only the XM
 
 ## Extracting the dataset
 
-@joshlawrimore needs to write the code for this.
+The `untar_pmcoa_comm_noncomm.sh` BASH script will serially unpack all the the .tar.gz in a given directory. However, the SBATCH parameters were not parsed by biowulf in the original script so only a partial unpacking occured (see `slurm-64691156.out`). @joshlawrimore added the `--skip-old-files` to the script and corrected the `sbatch_untar_pmcoa_comm_non_comm.sh` submission script (see `slurm-64727597.out`)
+
+@joshlawrimore is hoping the `--skip-old-files` will correctly process the iterrupted tar.gz file: `oa_comm_xml.PMC010xxxxxx.baseline.2025-06-26.tar.gz` but this shoudl be confirmed after extraction is finished.
 
 ## Analyzing the dataset
 
 @joshlawrimore need to write the code to run the old rtransparent version from the original paper on this set to validate old numbers from paper and from previous work in DSST.
-
